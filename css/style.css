@@ -1,0 +1,479 @@
+/* ==========================================================================
+   Scorava Marketing
+   All colors and spacing live here. Tweak these first.
+   ========================================================================== */
+
+:root {
+  /* Colors (accents taken from the logo) */
+  --color-bg: #000000;          /* matches the logo background */
+  --color-surface: #0d0d0d;     /* form fields */
+  --color-border: #262626;      /* divider lines, field borders */
+  --color-text: #f5f5f5;        /* primary text */
+  --color-muted: #a3a3a3;       /* secondary text */
+  --color-accent: #ff66c4;      /* logo pink: button, links, small details */
+  --color-accent-2: #cb6ce6;    /* logo violet: hover and focus only */
+  --color-on-accent: #000000;   /* text on the accent button */
+  --glow-pink: rgb(255 102 196 / 0.22);   /* background glow, top right */
+  --glow-violet: rgb(203 108 230 / 0.18); /* background glow, bottom left */
+
+  /* Type */
+  --font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --weight-regular: 400;
+  --weight-semibold: 600;
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --text-hero: clamp(2.25rem, 1.4rem + 4vw, 4.5rem);
+  --measure: 65ch;
+
+  /* Spacing */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4.5rem;
+  --space-7: clamp(5rem, 3rem + 8vw, 9rem);
+  --gutter: clamp(1.25rem, 0.5rem + 3vw, 3rem);
+  --max-width: 72rem;
+
+  /* Details */
+  --radius: 4px;
+  --transition: 160ms ease;
+}
+
+/* Base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Calm background glow in the logo colors. Sits behind everything. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse min(60rem, 120vw) min(40rem, 80vh) at 90% 0%, var(--glow-pink), transparent 70%),
+    radial-gradient(ellipse min(55rem, 110vw) min(40rem, 80vh) at 5% 100%, var(--glow-violet), transparent 70%);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: var(--weight-semibold);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--color-accent-2);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-2);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: -100px;
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.skip-link:focus {
+  top: var(--space-2);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Header
+   ========================================================================== */
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+}
+
+.site-header .logo img {
+  width: auto;
+  height: 48px;
+}
+
+.site-nav {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.nav-link {
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.nav-link:hover,
+.nav-link[aria-current="page"] {
+  color: var(--color-accent);
+}
+
+/* Hero
+   ========================================================================== */
+
+.hero {
+  padding-block: var(--space-6) var(--space-7);
+}
+
+.hero-name {
+  display: block;
+  margin-bottom: var(--space-3);
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero-headline {
+  display: block;
+  max-width: 18ch;
+  font-size: var(--text-hero);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.hero-lede {
+  max-width: 52ch;
+  margin-top: var(--space-4);
+  color: var(--color-muted);
+  font-size: var(--text-lg);
+}
+
+.button {
+  display: inline-block;
+  margin-top: var(--space-5);
+  padding: 0.9rem 1.6rem;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font: inherit;
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.button:hover {
+  border-color: var(--color-accent-2);
+  background: var(--color-accent-2);
+  color: var(--color-on-accent);
+}
+
+/* Sections
+   ========================================================================== */
+
+.section {
+  padding-block: var(--space-7);
+  border-top: 1px solid var(--color-border);
+}
+
+.section-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.section-label {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  max-width: 24ch;
+  font-size: var(--text-xl);
+}
+
+.section-intro {
+  max-width: var(--measure);
+  margin-top: var(--space-3);
+  color: var(--color-muted);
+}
+
+/* Lists of items (services, GEO points) */
+.item-list {
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: item;
+}
+
+.item-list li {
+  display: grid;
+  gap: var(--space-1);
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  counter-increment: item;
+}
+
+.item-list li:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.item-list li::before {
+  content: counter(item, decimal-leading-zero);
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.item-list h3 {
+  font-size: var(--text-lg);
+  letter-spacing: -0.01em;
+}
+
+.item-list p {
+  max-width: var(--measure);
+  color: var(--color-muted);
+}
+
+/* Contact page
+   ========================================================================== */
+
+.page-intro {
+  padding-block: var(--space-6) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page-title {
+  font-size: var(--text-hero);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.page-lede {
+  max-width: var(--measure);
+  margin-top: var(--space-3);
+  color: var(--color-muted);
+  font-size: var(--text-lg);
+}
+
+.contact-grid {
+  display: grid;
+  gap: var(--space-6);
+  padding-block: var(--space-5) var(--space-7);
+}
+
+.contact-form {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 40rem;
+}
+
+.field {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.field label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.field .optional {
+  color: var(--color-muted);
+  font-weight: var(--weight-regular);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  transition: border-color var(--transition);
+}
+
+.field textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+.field input:hover,
+.field textarea:hover {
+  border-color: #3d3d3d;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--color-accent);
+  outline: 1px solid var(--color-accent);
+  outline-offset: 0;
+}
+
+.contact-form .button {
+  justify-self: start;
+  margin-top: var(--space-1);
+}
+
+.hidden-field {
+  position: absolute;
+  left: -9999px;
+}
+
+.contact-aside h2 {
+  font-size: var(--text-lg);
+}
+
+.contact-aside p {
+  margin-top: var(--space-1);
+  color: var(--color-muted);
+}
+
+.contact-aside .email {
+  display: inline-block;
+  margin-top: var(--space-2);
+  font-size: var(--text-lg);
+  word-break: break-word;
+}
+
+/* Footer
+   ========================================================================== */
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+}
+
+.site-footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-block: var(--space-4);
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--space-3);
+}
+
+/* Tablet and up
+   ========================================================================== */
+
+@media (min-width: 48rem) {
+  .site-header .logo img {
+    height: 60px;
+  }
+
+  .section-grid {
+    grid-template-columns: 12rem 1fr;
+    gap: var(--space-5);
+  }
+
+  .item-list li {
+    grid-template-columns: 3rem 1fr;
+    column-gap: var(--space-3);
+  }
+
+  .item-list li > * {
+    grid-column: 2;
+  }
+
+  .item-list li::before {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 0.2em;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 16rem;
+  }
+}
+
+/* Desktop
+   ========================================================================== */
+
+@media (min-width: 64rem) {
+  .section-grid {
+    grid-template-columns: 16rem 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 20rem;
+    gap: var(--space-7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

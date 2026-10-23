@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Scorava Marketing</title>
+  <meta name="description" content="Get in touch with Scorava Marketing about SEO and AI search visibility for your small business.">
+  <link rel="canonical" href="https://scorava.com/contact/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Scorava Marketing">
+  <meta property="og:title" content="Contact | Scorava Marketing">
+  <meta property="og:description" content="Get in touch with Scorava Marketing about SEO and AI search visibility for your small business.">
+  <meta property="og:url" content="https://scorava.com/contact/">
+  <meta property="og:image" content="https://scorava.com/images/og-image.png">
+  <meta property="og:image:alt" content="Scorava Marketing logo: the word scorava with two upward arrows in pink and violet, on black.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="icon" href="../favicon.ico" sizes="32x32">
+  <link rel="icon" href="../images/favicon-32.png" type="image/png">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="../">
+        <img src="../images/scorava-logo.png" width="300" height="115" alt="Scorava Marketing home">
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a class="nav-link" href="./" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-intro" aria-labelledby="contact-heading">
+      <div class="container">
+        <h1 class="page-title" id="contact-heading">Let's talk</h1>
+        <p class="page-lede">Tell us about your business and what you need. We'll get back to you.</p>
+      </div>
+    </section>
+
+    <div class="container contact-grid">
+      <!-- FORMSPREE: Submissions go to form xwllpeby. Change the ID in the action URL to use a different form. -->
+      <form class="contact-form" action="https://formspree.io/f/xwllpeby" method="POST">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="business">Business name <span class="optional">(optional)</span></label>
+          <input id="business" name="business" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="New inquiry from scorava.com">
+        <!-- Spam trap for bots. Leave empty and hidden. -->
+        <div class="hidden-field" aria-hidden="true">
+          <label for="gotcha">Leave this field empty</label>
+          <input id="gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <button class="button" type="submit">Send message</button>
+      </form>
+
+      <aside class="contact-aside" aria-labelledby="email-heading">
+        <h2 id="email-heading">Prefer email?</h2>
+        <!--
+          CONTACT EMAIL: This is a temporary address. Swap it for a business email later.
+          Change both the href and the visible text below.
+          (The same address also appears in the JSON-LD schema in /index.html.)
+        -->
+        <a class="email" href="mailto:jianshgoel@gmail.com">jianshgoel@gmail.com</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Scorava Marketing. Founded by Jiansh Goel.</p>
+      <div class="footer-links">
+        <a href="./">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

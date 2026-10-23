@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://scorava.com/sitemap.xml
